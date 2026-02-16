@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@theme {
+  --color-primary: #E63946;
+  --color-secondary: #FBF9F1;
+  --color-accent: #FF85A2;
+  --color-vibrant-red: #E63946;
+  --color-cream: #FBF9F1;
+  --color-beige: #F5F5DC;
+
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-inter text-gray-900 bg-secondary;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 bg-primary text-white font-semibold rounded-full hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-white transition-all duration-300 active:scale-95;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+  }
+
+  .flower-divider {
+    @apply flex items-center justify-center space-x-4 my-8;
+  }
+
+  .flower-divider::before,
+  .flower-divider::after {
+    content: '';
+    @apply h-px w-16 bg-accent/30;
+  }
+}
+
+/* Custom Utilities */
+.text-shadow-premium {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bg-glass {
+  @apply bg-white/80 backdrop-blur-md;
+}
